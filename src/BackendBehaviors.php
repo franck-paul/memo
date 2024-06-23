@@ -138,6 +138,11 @@ class BackendBehaviors
         return '';
     }
 
+    public static function adminPreferencesHeaders(): string
+    {
+        return My::cssLoad('style.css');
+    }
+
     /**
      * adminEntryHeaders behavior callback helper
      *

@@ -35,6 +35,7 @@ class Backend extends Process
 
         App::behavior()->addBehaviors([
             // User preferences
+            'adminPreferencesHeaders'      => BackendBehaviors::adminPreferencesHeaders(...),
             'adminBeforeUserOptionsUpdate' => BackendBehaviors::adminBeforeUserOptionsUpdate(...),
             'adminPreferencesFormV2'       => BackendBehaviors::adminPreferencesForm(...),
 
