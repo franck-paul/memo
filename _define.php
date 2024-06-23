@@ -14,11 +14,12 @@ $this->registerModule(
     'memo',
     'User personal memo',
     'Franck Paul',
-    '0.0',
+    '0.1',
     [
         'requires'    => [['core', '2.30']],
         'permissions' => 'My',
         'type'        => 'plugin',
+        'priority'    => 900,   // Might be the first of the 3rd party
         'settings'    => [
         ],
 

@@ -33,10 +33,30 @@ class Install extends Process
 
         try {
             // Update
-            $old_version = App::version()->getVersion(My::id());
-            // Rename settings namespace
+            // Nothing up to now
 
             // Init
+            if ($preferences = My::prefs()) {
+                if (!$preferences->prefExists('memo')) {
+                    $preferences->put(
+                        'memo',
+                        '',
+                        App::userWorkspace()::WS_STRING,
+                        'memo',
+                        false
+                    );
+                }
+
+                if (!$preferences->prefExists('size')) {
+                    $preferences->put(
+                        'size',
+                        5,
+                        App::userWorkspace()::WS_INT,
+                        'memo size (number of rows)',
+                        false
+                    );
+                }
+            }
         } catch (Exception $exception) {
             App::error()->add($exception->getMessage());
         }
