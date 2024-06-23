@@ -177,8 +177,8 @@ class BackendBehaviors
     {
         $settings = My::prefs();
 
-        $content = $settings?->memo ?? '';
-        $rows    = $settings?->size ?? 5;
+        $content = $settings->memo ?? '';
+        $rows    = $settings->size ?? 5;
 
         echo (new Div())
             ->class(['memo', 'lockable'])
