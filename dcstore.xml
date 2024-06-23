@@ -1,10 +1,10 @@
 <modules xmlns:da="http://dotaddict.org/da/">
   <module id="memo">
     <name>memo</name>
-    <version>0.2</version>
+    <version>0.2.1</version>
     <author>Franck Paul</author>
     <desc>User personal memo</desc>
-    <file>https://github.com/franck-paul/memo/releases/download/0.2/plugin-memo-0.2.zip</file>
+    <file>https://github.com/franck-paul/memo/releases/download/0.2.1/plugin-memo-0.2.1.zip</file>
     <da:dcmin>2.30</da:dcmin>
     <da:details>https://github.com/franck-paul/memo</da:details>
     <da:support>https://github.com/franck-paul/memo</da:support>
