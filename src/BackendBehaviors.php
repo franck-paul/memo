@@ -15,6 +15,7 @@ declare(strict_types=1);
 namespace Dotclear\Plugin\memo;
 
 use Dotclear\App;
+use Dotclear\Helper\Html\Form\Details;
 use Dotclear\Helper\Html\Form\Div;
 use Dotclear\Helper\Html\Form\Fieldset;
 use Dotclear\Helper\Html\Form\Label;
@@ -22,6 +23,7 @@ use Dotclear\Helper\Html\Form\Legend;
 use Dotclear\Helper\Html\Form\Note;
 use Dotclear\Helper\Html\Form\Number;
 use Dotclear\Helper\Html\Form\Para;
+use Dotclear\Helper\Html\Form\Summary;
 use Dotclear\Helper\Html\Form\Textarea;
 use Dotclear\Helper\Html\Html;
 use Exception;
@@ -188,8 +190,8 @@ class BackendBehaviors
         echo (new Div())
             ->class(['memo', 'lockable'])
             ->items([
-                (new Fieldset('memo', 'details'))
-                    ->legend(new Legend(__('Memo'), null, 'summary'))
+                (new Details('memo'))
+                    ->summary(new Summary(__('Memo')))
                     ->items([
                         (new Para())
                             ->class('area')
