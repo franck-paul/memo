@@ -33,8 +33,8 @@ class Uninstall extends Process
 
         $module = My::id();
 
-        $ns = My::id(); // Namespace for blog settings
-        // $ws = My::id(); // Workspace for user preferences
+        //$ns = My::id(); // Namespace for blog settings
+        $ws = My::id(); // Workspace for user preferences
 
         // $cache = My::id(); // Cache sub-folder
         // $var   = My::id(); // Var sub-folder
@@ -67,9 +67,9 @@ class Uninstall extends Process
 
             // User preferences
             'preferences' => [
-                // ['delete_local', $ws],      // Delete user preferences
-                // ['delete_global', $ws],     // Delete global preferences
-                // ['delete_all', $ws],        // Delete all preferences
+                ['delete_local', $ws],      // Delete user preferences
+                ['delete_global', $ws],     // Delete global preferences
+                ['delete_all', $ws],        // Delete all preferences
 
                 // ['delete_related', 'ns:id;ns:id;'], // Delete specific preference(s)
             ],
