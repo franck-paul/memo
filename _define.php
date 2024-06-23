@@ -14,7 +14,7 @@ $this->registerModule(
     'memo',
     'User personal memo',
     'Franck Paul',
-    '0.3',
+    '0.4',
     [
         'requires'    => [['core', '2.30']],
         'permissions' => 'My',
