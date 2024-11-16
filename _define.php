@@ -16,7 +16,7 @@ $this->registerModule(
     'Franck Paul',
     '0.5',
     [
-        'requires'    => [['core', '2.31']],
+        'requires'    => [['core', '2.33']],
         'permissions' => 'My',
         'type'        => 'plugin',
         'priority'    => 900,   // Might be the first of the 3rd party

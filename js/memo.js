@@ -1,10 +1,10 @@
-/*global $, dotclear */
+/*global dotclear */
 'use strict';
 
 dotclear.ready(() => {
-  $('#edit-entry').on('onetabload', () => {
-    $('#memo').toggleWithDetails({
+  const memo = document.getElementById('memo');
+  if (memo)
+    dotclear.toggleWithDetails(memo, {
       user_pref: 'dcx_post_memo',
     });
-  });
 });
