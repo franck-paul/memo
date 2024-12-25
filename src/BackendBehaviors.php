@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @brief memo, a plugin for Dotclear 2
  *
@@ -41,10 +42,8 @@ class BackendBehaviors
         try {
             $preferences = My::prefs();
 
-            if ($preferences) {
-                if (isset($_POST['memo_memo']) && !empty($_POST['memo_memo'])) {
-                    $preferences->put('memo', Html::escapeHTML($_POST['memo_memo']), App::userWorkspace()::WS_STRING);
-                }
+            if (isset($_POST['memo_memo']) && !empty($_POST['memo_memo'])) {
+                $preferences->put('memo', Html::escapeHTML($_POST['memo_memo']), App::userWorkspace()::WS_STRING);
             }
         } catch (Exception $exception) {
             App::error()->add($exception->getMessage());
@@ -99,10 +98,8 @@ class BackendBehaviors
         try {
             $preferences = My::prefs();
 
-            if ($preferences) {
-                $preferences->put('memo', Html::escapeHTML($_POST['memo_memo']), App::userWorkspace()::WS_STRING);
-                $preferences->put('size', abs((int) $_POST['memo_size']), App::userWorkspace()::WS_INT);
-            }
+            $preferences->put('memo', Html::escapeHTML($_POST['memo_memo']), App::userWorkspace()::WS_STRING);
+            $preferences->put('size', abs((int) $_POST['memo_size']), App::userWorkspace()::WS_INT);
         } catch (Exception $exception) {
             App::error()->add($exception->getMessage());
         }
@@ -115,8 +112,8 @@ class BackendBehaviors
         // Get user's prefs for plugin options
         $preferences = My::prefs();
 
-        $memo = (string) $preferences?->memo;
-        $size = (int) $preferences?->size;
+        $memo = (string) $preferences->memo;
+        $size = (int) $preferences->size;
 
         echo
         (new Fieldset('memo'))
