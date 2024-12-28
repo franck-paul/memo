@@ -33,8 +33,6 @@ class BackendBehaviors
 {
     /**
      * adminAfterEntrySaved  behavior callback helper
-     *
-     * @return     string
      */
     protected static function adminAfterEntrySaved(): string
     {
@@ -54,8 +52,6 @@ class BackendBehaviors
 
     /**
      * adminAfterPostCreate  behavior callback
-     *
-     * @return     string
      */
     public static function adminAfterPostCreate(): string
     {
@@ -64,8 +60,6 @@ class BackendBehaviors
 
     /**
      * adminAfterPostUpdate  behavior callback
-     *
-     * @return     string
      */
     public static function adminAfterPostUpdate(): string
     {
@@ -74,8 +68,6 @@ class BackendBehaviors
 
     /**
      * adminAfterPageCreate  behavior callback
-     *
-     * @return     string
      */
     public static function adminAfterPageCreate(): string
     {
@@ -84,8 +76,6 @@ class BackendBehaviors
 
     /**
      * adminAfterPageUpdate  behavior callback
-     *
-     * @return     string
      */
     public static function adminAfterPageUpdate(): string
     {
@@ -144,8 +134,6 @@ class BackendBehaviors
 
     /**
      * adminEntryHeaders behavior callback helper
-     *
-     * @return     string
      */
     protected static function adminEntryHeaders(): string
     {
@@ -154,8 +142,6 @@ class BackendBehaviors
 
     /**
      * adminPostHeaders behavior callback
-     *
-     * @return     string
      */
     public static function adminPostHeaders(): string
     {
@@ -164,8 +150,6 @@ class BackendBehaviors
 
     /**
      * adminPageHeaders behavior callback
-     *
-     * @return     string
      */
     public static function adminPageHeaders(): string
     {
@@ -174,8 +158,6 @@ class BackendBehaviors
 
     /**
      * adminEntryForm behavior callback helper
-     *
-     * @return     string
      */
     protected static function adminEntryForm(): string
     {
@@ -209,8 +191,6 @@ class BackendBehaviors
 
     /**
      * adminPostForm  behavior callback
-     *
-     * @return     string
      */
     public static function adminPostForm(): string
     {
@@ -219,8 +199,6 @@ class BackendBehaviors
 
     /**
      * adminPageForm  behavior callback
-     *
-     * @return     string
      */
     public static function adminPageForm(): string
     {
