@@ -18,7 +18,7 @@ $this->registerModule(
     '0.5',
     [
         'date'        => '2003-08-13T13:42:00+0100',
-        'requires'    => [['core', '2.33']],
+        'requires'    => [['core', '2.36']],
         'permissions' => 'My',
         'type'        => 'plugin',
         'priority'    => 900,   // Might be the first of the 3rd party
@@ -29,5 +29,6 @@ $this->registerModule(
         'details'    => 'https://github.com/franck-paul/memo',
         'support'    => 'https://github.com/franck-paul/memo',
         'repository' => 'https://raw.githubusercontent.com/franck-paul/memo/main/dcstore.xml',
+        'license'    => 'gpl2',
     ]
 );
