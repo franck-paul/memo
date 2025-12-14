@@ -107,21 +107,21 @@ class BackendBehaviors
 
         echo
         (new Fieldset('memo'))
-        ->legend((new Legend(__('Memo'))))
-        ->fields([
-            (new Para())
-                ->class('area')
-                ->items([
-                    (new Textarea('memo_memo', $memo))
-                        ->cols(50)
-                        ->rows($size)
-                        ->label((new Label(__('Content:'), Label::IL_TF))),
+            ->legend((new Legend(__('Memo'))))
+            ->fields([
+                (new Para())
+                    ->class('area')
+                    ->items([
+                        (new Textarea('memo_memo', $memo))
+                            ->cols(50)
+                            ->rows($size)
+                            ->label((new Label(__('Content:'), Label::IL_TF))),
+                    ]),
+                (new Para())->items([
+                    (new Number('memo_size', 3, 999, $size))
+                        ->label((new Label(__('Number of rows:'), Label::IL_TF))),
                 ]),
-            (new Para())->items([
-                (new Number('memo_size', 3, 999, $size))
-                    ->label((new Label(__('Number of rows:'), Label::IL_TF))),
-            ]),
-        ])
+            ])
         ->render();
 
         return '';
@@ -170,14 +170,15 @@ class BackendBehaviors
             ->class(['memo', 'lockable'])
             ->items([
                 (new Details('memo'))
-                    ->summary(new Summary(__('Memo')))
+                    ->summary(new Summary(__('Memo'), 'memo_label'))
                     ->items([
                         (new Para())
                             ->class('area')
                             ->items([
                                 (new Textarea(['memo_memo'], $content))
                                     ->cols(50)
-                                    ->rows($rows),
+                                    ->rows($rows)
+                                    ->extra('aria-labelledby="memo_label"'),
                             ]),
                         (new Note())
                             ->class('form-note')
