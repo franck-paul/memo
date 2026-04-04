@@ -15,9 +15,9 @@ $this->registerModule(
     'memo',
     'User personal memo',
     'Franck Paul',
-    '1.1',
+    '1.2',
     [
-        'date'        => '2025-12-14T08:54:09+0100',
+        'date'        => '2026-04-04T17:18:48+0200',
         'requires'    => [['core', '2.36']],
         'permissions' => 'My',
         'type'        => 'plugin',
