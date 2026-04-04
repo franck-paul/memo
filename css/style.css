@@ -1,4 +1,8 @@
 .memo textarea,
 textarea#memo_memo {
   padding: 0.5em calc(0.5em + 1em) 0.5em 0.5em;
+
+  &.autosize {
+    field-sizing: content;
+  }
 }

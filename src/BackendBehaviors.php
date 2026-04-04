@@ -40,8 +40,9 @@ class BackendBehaviors
         try {
             $preferences = My::prefs();
 
-            if (isset($_POST['memo_memo']) && !empty($_POST['memo_memo'])) {
-                $preferences->put('memo', Html::escapeHTML($_POST['memo_memo']), App::userWorkspace()::WS_STRING);
+            $memo = isset($_POST['memo_memo']) && is_string($memo = $_POST['memo_memo']) ? $memo : '';
+            if ($memo !== '') {
+                $preferences->put('memo', Html::escapeHTML($memo), App::userWorkspace()::WS_STRING);
             }
         } catch (Exception $exception) {
             App::error()->add($exception->getMessage());
@@ -88,8 +89,11 @@ class BackendBehaviors
         try {
             $preferences = My::prefs();
 
-            $preferences->put('memo', Html::escapeHTML($_POST['memo_memo']), App::userWorkspace()::WS_STRING);
-            $preferences->put('size', abs((int) $_POST['memo_size']), App::userWorkspace()::WS_INT);
+            $memo = isset($_POST['memo_memo']) && is_string($memo = $_POST['memo_memo']) ? $memo : '';
+            $size = isset($_POST['memo_size']) && is_numeric($size = $_POST['memo_size']) ? abs((int) $size) : 0;
+
+            $preferences->put('memo', Html::escapeHTML($memo), App::userWorkspace()::WS_STRING);
+            $preferences->put('size', $size, App::userWorkspace()::WS_INT);
         } catch (Exception $exception) {
             App::error()->add($exception->getMessage());
         }
@@ -100,10 +104,10 @@ class BackendBehaviors
     public static function adminPreferencesForm(): string
     {
         // Get user's prefs for plugin options
-        $preferences = My::prefs();
+        $settings = My::prefs();
 
-        $memo = (string) $preferences->memo;
-        $size = (int) $preferences->size;
+        $memo = is_string($memo = $settings->memo) ? $memo : '';
+        $size = is_numeric($size = $settings->size) ? (int) $size : 0;
 
         echo
         (new Fieldset('memo'))
@@ -118,9 +122,12 @@ class BackendBehaviors
                             ->label((new Label(__('Content:'), Label::IL_TF))),
                     ]),
                 (new Para())->items([
-                    (new Number('memo_size', 3, 999, $size))
+                    (new Number('memo_size', 0, 999, $size))
                         ->label((new Label(__('Number of rows:'), Label::IL_TF))),
                 ]),
+                (new Note())
+                    ->class('info')
+                    ->text(__('Set number of rows to 0 to auto size.')),
             ])
         ->render();
 
@@ -163,8 +170,8 @@ class BackendBehaviors
     {
         $settings = My::prefs();
 
-        $content = $settings->memo ?? '';
-        $rows    = $settings->size ?? 5;
+        $memo = is_string($memo = $settings->memo) ? $memo : '';
+        $size = is_numeric($size = $settings->size) ? (int) $size : 0;
 
         echo (new Div())
             ->class(['memo', 'lockable'])
@@ -175,9 +182,10 @@ class BackendBehaviors
                         (new Para())
                             ->class('area')
                             ->items([
-                                (new Textarea(['memo_memo'], $content))
+                                (new Textarea(['memo_memo'], $memo))
                                     ->cols(50)
-                                    ->rows($rows)
+                                    ->rows($size)
+                                    ->class($size === 0 ? 'autosize' : '')
                                     ->extra('aria-labelledby="memo_label"'),
                             ]),
                         (new Note())
