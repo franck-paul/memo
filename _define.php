@@ -8,7 +8,7 @@
  *
  * @author Franck Paul
  *
- * @copyright Franck Paul, carnet.franck.paul@gmail.com
+ * @copyright Franck Paul, contact@open-time.net
  * @copyright AGPL-3.0 https://www.gnu.org/licenses/agpl-3.0.html
  */
 $this->registerModule(
