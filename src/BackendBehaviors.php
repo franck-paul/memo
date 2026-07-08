@@ -106,8 +106,8 @@ class BackendBehaviors
         // Get user's prefs for plugin options
         $settings = My::prefs();
 
-        $memo = is_string($memo = $settings->memo) ? $memo : '';
-        $size = is_numeric($size = $settings->size) ? (int) $size : 0;
+        $memo = $settings->getStr('memo', false);
+        $size = $settings->getInt('size', false);
 
         echo
         (new Fieldset('memo'))
@@ -170,8 +170,8 @@ class BackendBehaviors
     {
         $settings = My::prefs();
 
-        $memo = is_string($memo = $settings->memo) ? $memo : '';
-        $size = is_numeric($size = $settings->size) ? (int) $size : 0;
+        $memo = $settings->getStr('memo', false);
+        $size = $settings->getInt('size', false);
 
         echo (new Div())
             ->class(['memo', 'lockable'])
