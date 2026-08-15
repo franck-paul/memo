@@ -1,11 +1,11 @@
 <modules xmlns:da="http://dotaddict.org/da/">
   <module id="memo">
     <name>memo</name>
-    <version>2.0</version>
+    <version>2.1</version>
     <author>Franck Paul</author>
     <desc>User personal memo</desc>
-    <date>2026-08-03T10:04:54+0200</date>
-    <file>https://github.com/franck-paul/memo/releases/download/2.0/plugin-memo-2.0.zip</file>
+    <date>2026-08-03T10:04:54+02.1</date>
+    <file>https://github.com/franck-paul/memo/releases/download/2.1/plugin-memo-2.1.zip</file>
     <da:dcmin>2.39</da:dcmin>
     <da:details>https://dotclear.org/plugin/detail/memo</da:details>
     <da:support>https://github.com/franck-paul/memo</da:support>
