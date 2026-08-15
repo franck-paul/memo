@@ -1,1 +1,1 @@
-.memo textarea,textarea#memo_memo{padding:.5em 1.5em .5em .5em;&.autosize{field-sizing:content}}
+.memo textarea,textarea#memo_memo{min-height:2.5em;padding:.5em 1.5em .5em .5em;&.autosize{field-sizing:content}}
