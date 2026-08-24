@@ -186,7 +186,7 @@ class BackendBehaviors
                                     ->cols(50)
                                     ->rows($size)
                                     ->class($size === 0 ? 'autosize' : '')
-                                    ->extra('aria-labelledby="memo_label"'),
+                                    ->ariaLabelledby('memo_label'),
                             ]),
                         (new Note())
                             ->class('form-note')
