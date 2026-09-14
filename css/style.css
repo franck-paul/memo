@@ -1,7 +1,10 @@
 .memo textarea,
 textarea#memo_memo {
-  padding: 0.5em calc(0.5em + 1em) 0.5em 0.5em;
-  min-height: 2.5em;
+  padding-block-start: 0.5em;
+  padding-block-end: 0.5em;
+  padding-inline-start: 0.5em;
+  padding-inline-end: calc(0.5em + 1em);
+  min-block-size: 2.5em;
 
   &.autosize {
     field-sizing: content;
