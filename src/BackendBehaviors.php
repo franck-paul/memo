@@ -119,6 +119,7 @@ class BackendBehaviors
                         (new Textarea('memo_memo', $memo))
                             ->cols(50)
                             ->rows($size)
+                            ->class($size === 0 ? 'autosize' : '')
                             ->label((new Label(__('Content:'), Label::IL_TF))),
                     ]),
                 (new Para())->items([
