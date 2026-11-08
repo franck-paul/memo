@@ -18,9 +18,9 @@ if (isset($this) && is_object($this) && method_exists($this, 'registerModule') &
         'memo',
         'User personal memo',
         'Franck Paul',
-        '2.1',
+        '3.0',
         [
-            'date'        => '2026-08-03T10:04:54+02.1',
+            'date'        => '2026-08-03T10:04:54+03.0',
             'requires'    => [['core', '2.40']],
             'permissions' => 'My',
             'type'        => 'plugin',
